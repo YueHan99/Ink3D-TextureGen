@@ -97,6 +97,11 @@ body {
   letter-spacing: 0.02em;
 }
 
+.brand-script {
+  font-family: "Baguet Script", cursive;
+  font-weight: 400;
+}
+
 main {
   max-width: 1120px;
   margin: 0 auto;
