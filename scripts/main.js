@@ -50,16 +50,7 @@ const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 const modalClose = document.getElementById("modalClose");
 
-const runBtn = document.getElementById("runBtn");
-const statusText = document.getElementById("statusText");
-const progressBar = document.getElementById("progressBar");
-const statePill = document.getElementById("statePill");
-const promptInput = document.getElementById("promptInput");
-const assetType = document.getElementById("assetType");
-const detailRange = document.getElementById("detailRange");
-
 let activeTag = "All";
-let activeTimer = null;
 
 function renderTags() {
   tagGroup.innerHTML = "";
@@ -102,9 +93,9 @@ function renderCards() {
 function openModal(item) {
   modalContent.innerHTML = `
     <h3>${item.name}</h3>
-    <p style="color:#9db4c7; margin-top:6px;">${item.note}</p>
-    <p style="color:#9db4c7;">Category: ${item.type}</p>
-    <div style="height:240px;border-radius:12px;background:${item.gradient};border:1px solid rgba(157,180,199,.25);"></div>
+    <p style="color:var(--muted); margin-top:6px;">${item.note}</p>
+    <p style="color:var(--muted);">Category: ${item.type}</p>
+    <div style="height:240px;border-radius:12px;background:${item.gradient};border:1px solid var(--border);"></div>
   `;
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
@@ -120,51 +111,6 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     closeModal();
   }
-});
-
-document.querySelectorAll(".tab").forEach((tab) => {
-  tab.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach((btn) => {
-      btn.classList.remove("active");
-      btn.setAttribute("aria-selected", "false");
-    });
-    document.querySelectorAll(".tab-panel").forEach((panel) => panel.classList.remove("active"));
-
-    tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
-    const panel = document.getElementById(tab.dataset.target);
-    panel.classList.add("active");
-  });
-});
-
-runBtn.addEventListener("click", () => {
-  const prompt = promptInput.value.trim();
-  if (!prompt) {
-    statusText.textContent = "Please write a prompt before running the preview.";
-    return;
-  }
-
-  if (activeTimer) {
-    clearInterval(activeTimer);
-  }
-
-  let progress = 0;
-  progressBar.style.width = "0%";
-  statePill.textContent = "Running";
-  statePill.className = "state running";
-  statusText.textContent = `Preparing ${assetType.value.toLowerCase()} pipeline at detail ${detailRange.value}/10...`;
-
-  activeTimer = setInterval(() => {
-    progress += Math.random() * 19;
-    if (progress >= 100) {
-      progress = 100;
-      clearInterval(activeTimer);
-      statePill.textContent = "Done";
-      statePill.className = "state done";
-      statusText.textContent = `Preview complete for prompt: "${prompt}"`;
-    }
-    progressBar.style.width = `${Math.round(progress)}%`;
-  }, 240);
 });
 
 renderTags();
