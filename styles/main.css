@@ -98,8 +98,9 @@ body {
 }
 
 .brand-script {
-  font-family: "Baguet Script", cursive;
-  font-weight: 400;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: 1.15em;
 }
 
 main {
