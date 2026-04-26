@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ink3D TextureGen</title>
+    <meta
+      name="description"
+      content="Ink3D TextureGen: image-to-3D texture concept site with curated showcases, method notes, and generation preview UI."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-a" aria-hidden="true"></div>
+    <div class="ambient ambient-b" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">Ink3D TextureGen</div>
+      <nav>
+        <a href="#showcase">Showcase</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+      <a class="pill" href="https://github.com/Ink3DTexGen/Ink3D-TextureGen" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main>
+      <section id="showcase" class="hero">
+        <p class="kicker">Image to 3D Asset Workflow</p>
+        <h1>Build textured 3D assets with an intentional, fast website workflow.</h1>
+        <p class="hero-copy">
+          This site is a clean project front-end for Ink3D experiments: prompt examples,
+          structure notes, category filtering, and generation-style previews.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#gallery">Explore Results</a>
+          <a class="btn btn-ghost" href="#demo">Open Demo Panel</a>
+        </div>
+      </section>
+
+      <section id="demo" class="panel">
+        <div class="panel-head">
+          <h2>Generation Preview</h2>
+          <span id="statePill" class="state idle">Idle</span>
+        </div>
+        <div class="demo-grid">
+          <label>
+            Prompt
+            <textarea id="promptInput" rows="3" placeholder="A carved obsidian mask with cyan enamel details"></textarea>
+          </label>
+          <label>
+            Asset Type
+            <select id="assetType">
+              <option>Character</option>
+              <option>Hard Surface</option>
+              <option>Scene</option>
+              <option>Organic</option>
+            </select>
+          </label>
+          <label>
+            Texture Detail
+            <input id="detailRange" type="range" min="1" max="10" value="7" />
+          </label>
+          <button id="runBtn" class="btn btn-primary">Simulate Generation</button>
+        </div>
+        <div class="progress-wrap" aria-live="polite">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p id="statusText" class="status-text">Waiting for your prompt...</p>
+      </section>
+
+      <section id="pipeline" class="panel">
+        <h2>Core Pipeline Notes</h2>
+        <div class="feature-tabs" role="tablist" aria-label="Method tabs">
+          <button class="tab active" data-target="tab-1" role="tab" aria-selected="true">Latent Packing</button>
+          <button class="tab" data-target="tab-2" role="tab" aria-selected="false">Topology Hints</button>
+          <button class="tab" data-target="tab-3" role="tab" aria-selected="false">PBR Layers</button>
+          <button class="tab" data-target="tab-4" role="tab" aria-selected="false">QA Checks</button>
+        </div>
+        <div class="tab-panels">
+          <article id="tab-1" class="tab-panel active" role="tabpanel">
+            Compress high-res structural cues into compact tokens for faster downstream generation.
+          </article>
+          <article id="tab-2" class="tab-panel" role="tabpanel">
+            Preserve boundaries for thin structures and open surfaces to avoid geometry collapse.
+          </article>
+          <article id="tab-3" class="tab-panel" role="tabpanel">
+            Separate base color, roughness, and metallic channels to keep material editing flexible.
+          </article>
+          <article id="tab-4" class="tab-panel" role="tabpanel">
+            Add render sanity checks before publishing, with category-specific visual thresholds.
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery" class="panel">
+        <div class="panel-head">
+          <h2>Result Gallery</h2>
+          <div id="tagGroup" class="tags"></div>
+        </div>
+        <div id="cardGrid" class="card-grid"></div>
+      </section>
+    </main>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-window">
+        <button id="modalClose" class="modal-close" aria-label="Close">x</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Ink3D TextureGen site scaffold for GitHub Pages.</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
