@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Baguet Script";
+  src: url("../fonts/Melvastype - Baguet Script Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baguet Script";
+  src: url("../fonts/Melvastype - Baguet Script Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #07121a;
   --bg-soft: #0d2230;
@@ -98,8 +114,8 @@ body {
 }
 
 .brand-script {
-  font-family: "Dancing Script", cursive;
-  font-weight: 700;
+  font-family: "Baguet Script", cursive;
+  font-weight: 400;
   font-size: 1.15em;
 }
 
