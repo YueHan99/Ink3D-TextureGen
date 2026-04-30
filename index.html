@@ -7,7 +7,7 @@
     <meta name="description" content="Ink3D: Sculpting 3D Assets with Extremely Complex Textures via Video Generative Models" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@400;500;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
@@ -28,6 +28,197 @@
         <p class="section-body">Aims to Paint Complex 3D Textures (text, fine patterns, etc.)</p>
       </section>
 
+      <!-- 3D Results -->
+      <section class="section-center" style="margin-top:48px;">
+        <h2 class="section-label">Real Life Cases</h2>
+        <div class="result-grid">
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/115_gd_pbr_turntable.mp4" type="video/mp4">
+            </video>
+            <img class="result-img" src="assets/videos/115.jpg" alt="Input image" onclick="event.stopPropagation();openImgLightbox(this)">
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/129_gd4front_pbr_turntable.mp4" type="video/mp4">
+            </video>
+            <img class="result-img" src="assets/videos/129.jpg" alt="Input image" onclick="event.stopPropagation();openImgLightbox(this)">
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/113_gd4front_pbr_turntable.mp4" type="video/mp4">
+            </video>
+            <img class="result-img" src="assets/videos/113.jpg" alt="Input image" onclick="event.stopPropagation();openImgLightbox(this)">
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/134_gd4front_pbr_turntable.mp4" type="video/mp4">
+            </video>
+            <img class="result-img" src="assets/videos/134.jpg" alt="Input image" onclick="event.stopPropagation();openImgLightbox(this)">
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/095_gd4front_pbr_turntable.mp4" type="video/mp4">
+            </video>
+            <img class="result-img" src="assets/videos/095.jpg" alt="Input image" onclick="event.stopPropagation();openImgLightbox(this)">
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/126_gd4front_pbr_turntable.mp4" type="video/mp4">
+            </video>
+            <img class="result-img" src="assets/videos/126.jpg" alt="Input image" onclick="event.stopPropagation();openImgLightbox(this)">
+          </div>
+        </div>
+      </section>
+
+      <!-- Piano row -->
+      <section class="section-center">
+        <h2 class="section-label">Dream Cases</h2>
+        <div class="result-grid">
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/piano2_G003_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/piano2_G011_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/piano2_G002_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spider row -->
+      <section class="section-center">
+        <div class="result-grid">
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/spider_G009_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/spider_G006_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/spider_G001_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- Toy8 row -->
+      <section class="section-center">
+        <div class="result-grid">
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/toy8_G007_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/toy8_G002_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/toy8_G001_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dragonhouse row -->
+      <section class="section-center">
+        <div class="result-grid">
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/dragonhouse_G010_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/dragonhouse_G002_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/dragonhouse_G000_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cart row -->
+      <section class="section-center">
+        <div class="result-grid">
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/cart_G001_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/cart_G006_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/cart_G004_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cake row -->
+      <section class="section-center">
+        <div class="result-grid">
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/cake_G000_step0_rebake_pbr_turntable.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/cake_G002_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/cake_G005_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- Castle row -->
+      <section class="section-center">
+        <div class="result-grid">
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/castle_G000_rebake_pbr_turntable.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/castle_G002_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="result-card" onclick="openLightbox(this)">
+            <video class="result-video" autoplay muted playsinline>
+              <source src="assets/videos/castle_G003_step0_rebake.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </section>
+
       <!-- Motivation -->
       <section class="section-center">
         <h2 class="section-label">Motivation</h2>
@@ -36,12 +227,21 @@
         </div>
       </section>
 
-      <!-- Gallery (kept for later use) -->
-      <section id="gallery" class="section-center" style="margin-top:64px;">
-        <h2 class="section-label">Result Gallery</h2>
-        <div class="tags" id="tagGroup"></div>
-        <div id="cardGrid" class="card-grid"></div>
+      <!-- Pipeline -->
+      <section class="section-center">
+        <h2 class="section-label">Pipeline</h2>
+        <div class="placeholder-img">
+          <span>Image placeholder</span>
+        </div>
       </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <video id="lightboxVideo" autoplay loop muted playsinline></video>
+      <img id="lightboxImg" src="" alt="Enlarged input">
+    </div>
+
+      <!-- Gallery (kept for later use) -->
     </main>
 
     <div id="modal" class="modal" aria-hidden="true">

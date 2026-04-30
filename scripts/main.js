@@ -115,3 +115,48 @@ modal.addEventListener("click", (e) => {
 
 renderTags();
 renderCards();
+
+// Lightbox for result videos
+function openLightbox(card) {
+  const video = card.querySelector("video source");
+  if (!video) return;
+  const lb = document.getElementById("lightbox");
+  const lbVideo = document.getElementById("lightboxVideo");
+  const lbImg = document.getElementById("lightboxImg");
+  lbVideo.src = video.src;
+  lbVideo.classList.add("active");
+  lbImg.classList.remove("active");
+  lb.classList.add("open");
+}
+
+function openImgLightbox(img) {
+  const lb = document.getElementById("lightbox");
+  const lbVideo = document.getElementById("lightboxVideo");
+  const lbImg = document.getElementById("lightboxImg");
+  lbImg.src = img.src;
+  lbImg.classList.add("active");
+  lbVideo.classList.remove("active");
+  lb.classList.add("open");
+}
+
+function closeLightbox() {
+  const lb = document.getElementById("lightbox");
+  const lbVideo = document.getElementById("lightboxVideo");
+  const lbImg = document.getElementById("lightboxImg");
+  lb.classList.remove("open");
+  lbVideo.src = "";
+  lbVideo.classList.remove("active");
+  lbImg.src = "";
+  lbImg.classList.remove("active");
+}
+
+// Pause 3 seconds between each loop for result videos
+document.querySelectorAll(".result-card video").forEach((video) => {
+  video.addEventListener("ended", () => {
+    setTimeout(() => {
+      video.currentTime = 0;
+      var p = video.play();
+      if (p) p.catch(function() {});
+    }, 3000);
+  });
+});
