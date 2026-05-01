@@ -54,6 +54,29 @@ body {
   position: relative;
 }
 
+.teaser-wrap {
+  width: min(1200px, 90vw);
+  margin: 16px auto 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.teaser-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.teaser-img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 30vw, 460px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+}
+
 /* Playful floating blobs */
 .blob {
   position: fixed;
